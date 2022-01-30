@@ -39,4 +39,4 @@ class CommentViewSet(viewsets.ModelViewSet):
         super(CommentViewSet, self).perform_update(serializer)
 
     def perform_destroy(self, instance):
-        instance.delete() 
+        instance.delete()

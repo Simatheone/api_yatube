@@ -8,6 +8,7 @@ from .permissions import IsAuthorOrReadOnly
 
 
 class PostViewSet(viewsets.ModelViewSet):
+    """Вьюсет для обработки CRUD запросов эндпоинта posts/."""
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_class = [IsAuthenticated, IsAuthorOrReadOnly]
@@ -17,12 +18,14 @@ class PostViewSet(viewsets.ModelViewSet):
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
+    """Вьюсет для обработки CRUD запросов эндпоинта groups/."""
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_class = [IsAuthenticated]
 
 
 class CommentViewSet(viewsets.ModelViewSet):
+    """Вьюсет для обработки CRUD запросов эндпоинта posts/.../comments/."""
     serializer_class = CommentSerializer
     permission_class = [IsAuthenticated, IsAuthorOrReadOnly]
 
